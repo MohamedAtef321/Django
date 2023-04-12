@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+{% load static %}
+<html> 
+     <head> 
+         <meta   charset = "utf-8" > 
+         <title > dj_app_1 Users </title > 
+         <link   rel = "stylesheet"   href = "{% static 'css/style.css' %}" /> 
+         <!-- link bootstrap -->
+         <link   rel = "stylesheet"   href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"   integrity = "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"   crossorigin = "anonymous" >
+     </head > 
+     <body > 
+         <!-- 
+            <h1 > hello, this is users.html </h1 > 
+         <h2 > hello, {{ name }} </h2 > 
+         <h3 > here are your Users: </h3 > 
+         <div   class = "dj_2" > 
+             {%if users%} 
+                 <table >
+                    <ol type="1">
+                     {% for user in users %} 
+                     <li>
+                        <h4>User Info</h4>
+                            <ul>
+                                
+                             <li > First Name: {{ user.first_name }} </li >
+                             <li > Last Name: {{ user.last_name }} </li > 
+                             <li > Email: {{ user.email }} </li > 
+                            </ul>
+                     </li>
+                     {% endfor %} 
+                        </ol>
+                 </table > 
+             {% else %} 
+                 <p > no users Found! </p > 
+             {% endif %}
+         </div > 
+         {{ insert_var }}
+          --> 
+          <div class="container">
+            <h1>Please Sign Up here !</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Sign Up" class="btn btn-primary">
+            </form>
+
+          </div>
+     </body > 
+ </html >
